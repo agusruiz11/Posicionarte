@@ -1,0 +1,65 @@
+
+---Downloaded files---
+The import files for: Dilabs Demo were successfully downloaded!
+Initial max execution time = 1500
+Files info:
+Site URL = https://validthemes.tech/themeforest/wordpress/travon
+Data file = /home/valifzxf/public_html/themeforest/wordpress/travon/wp-content/themes/dilabs/inc/demo-data/dilabs-demo.xml
+Widget file = /home/valifzxf/public_html/themeforest/wordpress/travon/wp-content/themes/dilabs/inc/demo-data/dilabs-widgets-demo.json
+Customizer file = not defined!
+Redux files:
+dilabs_opt -> /home/valifzxf/public_html/themeforest/wordpress/travon/wp-content/themes/dilabs/inc/demo-data/redux_options_demo.json 
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Blog Sidebar : 
+
+Block - No Title - Widget already exists
+Block - No Title - Widget already exists
+Block - No Title - Widget already exists
+
+Page Sidebar : 
+
+Block - No Title - Widget already exists
+Block - No Title - Widget already exists
+
+Footer Widgets Area 1 : 
+
+Dilabs :: About Us Widget - No Title - Imported
+
+Footer Widgets Area 2 : 
+
+Navigation Menu - Company - Imported
+
+Footer Widgets Area 3 : 
+
+Dilabs :: Contact Info - Contact Info - Imported
+
+Footer Widgets Area 4 : 
+
+Dilabs :: CTA - Newsletter - Imported
+
+Offcanvas Item Widgets Area : 
+
+Block - No Title - Imported
+Block - No Title - Imported
+Block - No Title - Imported
+Block - No Title - Imported
+
+Service Widgets Area : 
+
+Navigation Menu - Marketing services - Imported
+Dilabs :: Service CTA - Need Help? - Imported
+Dilabs :: Download Button - Brochure - Imported
+
+
+
+---Importing Redux settings---
+Redux settings import for: dilabs_opt finished successfully!
+
+---ocdi/after_import---
+
