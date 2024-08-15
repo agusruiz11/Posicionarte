@@ -1,3 +1,0 @@
-
----Downloaded files---
-An error occurred while fetching file from: <strong>http://demofiles.ancorathemes.com/integro/ocdi/posts.xml</strong>!<br>Reason: 404 - Not Found.<br>

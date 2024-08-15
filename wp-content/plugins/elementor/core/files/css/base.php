@@ -779,17 +779,22 @@ abstract class Base extends Base_File {
 			// When the control itself has no global value, but it refers to another control global value
 			return $this->get_selector_global_value( $control, $values['__globals__'][ $control['name'] ] );
 		}
-
+	
+		// Check if the control name exists in the values array before accessing it
+		if ( !isset($values[ $control['name'] ]) ) {
+			return null; // or set a default value if needed
+		}
+	
 		$value = $values[ $control['name'] ];
-
+	
 		if ( isset( $control['selectors_dictionary'][ $value ] ) ) {
 			$value = $control['selectors_dictionary'][ $value ];
 		}
-
+	
 		if ( ! is_numeric( $value ) && ! is_float( $value ) && empty( $value ) ) {
 			return null;
 		}
-
+	
 		return $value;
 	}
 

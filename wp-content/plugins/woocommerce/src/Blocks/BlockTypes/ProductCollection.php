@@ -112,7 +112,7 @@ class ProductCollection extends AbstractBlock {
 					'data-wc-navigation-id',
 					'wc-product-collection-' . $this->parsed_block['attrs']['queryId']
 				);
-				$p->set_attribute( 'data-wc-interactive', wp_json_encode( array( 'namespace' => 'woocommerce/product-collection' ) ) );
+				$p->set_attribute( 'data-wc-interactive', wp_json_encode( array( 'namespace' => 'woocommerce/product-collection' ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ) );
 				$p->set_attribute(
 					'data-wc-context',
 					wp_json_encode(
@@ -124,7 +124,7 @@ class ProductCollection extends AbstractBlock {
 							// This way we avoid prefetching when the page loads.
 							'isPrefetchNextOrPreviousLink' => false,
 						),
-						JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP
+						JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP
 					)
 				);
 				$block_content = $p->get_updated_html();
@@ -226,7 +226,7 @@ class ProductCollection extends AbstractBlock {
 				'class_name' => $class_name,
 			)
 		) ) {
-			$processor->set_attribute( 'data-wc-interactive', wp_json_encode( array( 'namespace' => 'woocommerce/product-collection' ) ) );
+			$processor->set_attribute( 'data-wc-interactive', wp_json_encode( array( 'namespace' => 'woocommerce/product-collection' ), JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP ) );
 			$processor->set_attribute( 'data-wc-on--click', 'actions.navigate' );
 			$processor->set_attribute( 'data-wc-key', $key_prefix . '--' . esc_attr( wp_rand() ) );
 
@@ -276,12 +276,14 @@ class ProductCollection extends AbstractBlock {
 		static $dirty_enhanced_queries             = array();
 		static $render_product_collection_callback = null;
 
-		$block_name               = $parsed_block['blockName'];
-		$force_page_reload_global =
+		$block_name                  = $parsed_block['blockName'];
+		$is_product_collection_block = $parsed_block['attrs']['query']['isProductCollectionBlock'] ?? false;
+		$force_page_reload_global    =
 			$parsed_block['attrs']['forcePageReload'] ?? false &&
 			isset( $block['attrs']['queryId'] );
 
 		if (
+			$is_product_collection_block &&
 			'woocommerce/product-collection' === $block_name &&
 			! $force_page_reload_global
 		) {
